@@ -1,0 +1,89 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class ProdukSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('kategoris')->insert([
+            'nama_kategori' => 'kategori1',
+        ]);
+        DB::table('kategoris')->insert([
+            'nama_kategori' => 'kategori2',
+        ]);
+        DB::table('kategoris')->insert([
+            'nama_kategori' => 'kategori3',
+        ]);
+        DB::table('kategoris')->insert([
+            'nama_kategori' => 'kategori4',
+        ]);
+        DB::table('kategoris')->insert([
+            'nama_kategori' => 'kategori5',
+        ]);
+
+
+
+        DB::table('satuans')->insert([
+            'nama_satuan' => 'satuan1',
+        ]);
+        DB::table('satuans')->insert([
+            'nama_satuan' => 'satuan2',
+        ]);
+        DB::table('satuans')->insert([
+            'nama_satuan' => 'satuan3',
+        ]);
+        DB::table('satuans')->insert([
+            'nama_satuan' => 'satuan4',
+        ]);
+        DB::table('satuans')->insert([
+            'nama_satuan' => 'satuan5',
+        ]);
+
+
+
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk1',
+            'kategori_id' => '1',
+            'satuan_id' => '1',
+            'stok' => '23',
+            'harga' => '10000'
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk2',
+            'kategori_id' => '2',
+            'satuan_id' => '2',
+            'stok' => '23',
+            'harga' => '10000'
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk3',
+            'kategori_id' => '3',
+            'satuan_id' => '3',
+            'stok' => '23',
+            'harga' => '10000'
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk4',
+            'kategori_id' => '4',
+            'satuan_id' => '4',
+            'stok' => '23',
+            'harga' => '10000'
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk5',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000'
+        ]);
+    }
+}
