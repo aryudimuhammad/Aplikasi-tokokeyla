@@ -47,7 +47,7 @@ class ProdukController extends Controller
     public function delete($id)
     {
         $data = Produk::find($id);
-        $data->delete(); teS
+        $data->delete();
 
         return back();
     }
