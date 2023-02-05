@@ -14,10 +14,10 @@
                         @csrf
                         <label>Nama Produk</label>
                         <div class="form-group">
-                            <input type="text" name="nama_produk" id="nama_produk" placeholder="Masukkan Nama Produk"
-                                value="{{old('nama_produk')}}"
-                                class="form-control  @error ('nama_produk') is-invalid @enderror">
-                            @error('nama_produk')<div class="invalid-feedback"> {{$message}} </div>@enderror
+                            <input type="text" name="nama_barang" id="nama_barang" placeholder="Masukkan Nama Produk"
+                                value="{{old('nama_barang')}}"
+                                class="form-control  @error ('nama_barang') is-invalid @enderror">
+                            @error('nama_barang')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
 
                         <div class="form-group">
@@ -43,6 +43,13 @@
                             <input type="number" name="stok" id="stok" placeholder="Masukkan Stok"
                                 value="{{old('stok')}}" class="form-control ">
                             @error('stok')<div class="invalid-feedback"> {{$message}} </div>@enderror
+                        </div>
+
+                        <label>Harga</label>
+                        <div class="form-group">
+                            <input type="number" name="harga" id="harga" placeholder="Masukkan harga"
+                                value="{{old('harga')}}" class="form-control ">
+                            @error('harga')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
 
                         <br>

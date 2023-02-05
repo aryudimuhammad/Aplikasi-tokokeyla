@@ -35,9 +35,25 @@
                             <label for="satuan_id">Satuan</label>
                             <select class="custom-select" name="satuan_id" id="satuan_id">
                                 @foreach($satuan as $d)
-                                <option value="{{$d->id}}">{{$d->nama_satuan}}</option>
+                                <option value="{{$d->id}}" placeholder="Masukkan Satuan">{{$d->nama_satuan}}</option>
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label" for="stok">Stok</label>
+                            <input type="text" class="form-control @error ('stok') is-invalid @enderror"
+                                placeholder="Masukkan Stok" name="stok" value="{{old('stok')}}"
+                                id="stok" autofocus>
+                            @error('stok')<div class="invalid-feedback"> {{$message}} </div>@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label" for="harga">Harga</label>
+                            <input type="text" class="form-control @error ('harga') is-invalid @enderror"
+                                placeholder="Masukkan Harga" name="harga" value="{{old('harga')}}"
+                                id="harga" autofocus>
+                            @error('harga')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
 
                     </div>

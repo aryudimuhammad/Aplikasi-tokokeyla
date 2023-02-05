@@ -66,7 +66,7 @@
                             <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_barang="{{$d->nama_barang}}" data-kateogri="{{$d->kateogri_id}}" data-satuan="{{$d->satuan_id}}" data-stok="{{$d->stok}}" data-harga="{{$d->harga}}" data-toggle="modal" data-target="#editModal">
                                 <i class="fa fa-pencil color-muted m-r-5"></i>
                             </a>
-                            <a class="delete btn btn-sm btn-danger text-white" data-id="{{$d->id}}" href="#"><i class="fa fa-close color-danger"></i></a>
+                            <a class="delete btn btn-sm btn-danger text-white" data-id="{{$d->id}}" href="#"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -119,16 +119,19 @@
         let button = $(event.relatedTarget)
         let id = button.data('id')
         let nama_barang = button.data('nama_barang')
-        let merk_id = button.data('merk_id')
+        let kategori_id = button.data('kategori_id')
         let satuan_id = button.data('satuan_id')
         let stok = button.data('stok')
+        let harga = button.data('harga')
         let modal = $(this)
 
         modal.find('.modal-body #id').val(id)
         modal.find('.modal-body #nama_barang').val(nama_barang);
-        modal.find('.modal-body #merk_id').val(merk_id);
+        modal.find('.modal-body #kategori_id').val(kategori_id);
         modal.find('.modal-body #satuan_id').val(satuan_id);
         modal.find('.modal-body #stok').val(stok);
+        modal.find('.modal-body #harga').val(harga);
+
     })
 </script>
 
