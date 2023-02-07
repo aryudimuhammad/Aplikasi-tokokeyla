@@ -55,35 +55,89 @@ class ProdukSeeder extends Seeder
             'kategori_id' => '1',
             'satuan_id' => '1',
             'stok' => '23',
-            'harga' => '10000'
+            'harga' => '10000',
+            'gambar' => 'img/gas.png',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk2',
             'kategori_id' => '2',
             'satuan_id' => '2',
             'stok' => '23',
-            'harga' => '10000'
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk3',
             'kategori_id' => '3',
             'satuan_id' => '3',
             'stok' => '23',
-            'harga' => '10000'
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk4',
             'kategori_id' => '4',
             'satuan_id' => '4',
             'stok' => '23',
-            'harga' => '10000'
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk5',
             'kategori_id' => '5',
             'satuan_id' => '5',
             'stok' => '23',
-            'harga' => '10000'
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk6',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/a.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk7',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk8',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk9',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk18',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
+        ]);
+        DB::table('produks')->insert([
+            'nama_barang' => 'produk99',
+            'kategori_id' => '5',
+            'satuan_id' => '5',
+            'stok' => '23',
+            'harga' => '10000',
+            'gambar' => 'img/beras.jpeg',
         ]);
     }
 }

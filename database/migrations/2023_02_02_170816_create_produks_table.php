@@ -20,7 +20,7 @@ class CreateProduksTable extends Migration
             $table->unsignedBigInteger('satuan_id');
             $table->integer('stok')->nullable();
             $table->integer('harga')->nullable();
-            $table->integer('gambar')->nullable();
+            $table->string('gambar')->nullable();
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('restrict');
             $table->foreign('satuan_id')->references('id')->on('satuans')->onDelete('restrict');
             $table->timestamps();

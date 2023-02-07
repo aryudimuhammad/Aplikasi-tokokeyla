@@ -30,18 +30,41 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('produkindex')}}" class="nav-link">
-            <i class="fa-sharp fa-solid fa-box-archive"></i>
+            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
               <p>Produk</p>
             </a>
           </li>
 
+          <li class="nav-item menu-open">
+            <a href="{{route('kategoriindex')}}" class="nav-link">
+            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+              <p>Kategori</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{route('satuanindex')}}" class="nav-link">
+            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+              <p>Satuan</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white">
+            Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}"
+                                method="POST" class="d-none">
+                                @csrf
+            </form>
+      </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

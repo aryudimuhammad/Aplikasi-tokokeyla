@@ -9,6 +9,24 @@ use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
+    public function welcome()
+    {
+        $carousel = Produk::orderBy('id', 'desc')->paginate(3);
+        $kategori = Kategori::orderBy('id', 'desc')->get();
+        $produk = Produk::orderBy('id', 'desc')->paginate(9)->withQueryString();
+
+        return view('welcome', compact('produk','carousel','kategori'));
+    }
+
+    public function detail()
+    {
+        $carousel = Produk::orderBy('id', 'desc')->paginate(3);
+        $kategori = Kategori::orderBy('id', 'desc')->get();
+        $produk = Produk::orderBy('id', 'desc')->paginate(9)->withQueryString();
+
+        return view('welcome', compact('produk','carousel','kategori'));
+    }
+
     public function index()
     {
         $data = Produk::orderBy('id', 'desc')->get();
