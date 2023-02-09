@@ -57,6 +57,20 @@
           </li>
 
           <li class="nav-item menu-open">
+            <a href="{{route('supplierindex')}}" class="nav-link">
+            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+              <p>Supplier</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{route('agenindex')}}" class="nav-link">
+            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+              <p>Agen</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white">
             Logout
             </a>

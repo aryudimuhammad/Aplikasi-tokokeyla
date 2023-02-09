@@ -44,3 +44,15 @@ Route::get('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'inde
 Route::post('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'create'])->name('satuancreate');
 Route::put('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'edit'])->name('satuanedit');
 Route::delete('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'delete'])->name('satuandelete');
+
+Route::get('/admin/supplier', [App\Http\Controllers\UserController::class, 'supplier'])->name('supplierindex');
+Route::get('/admin/supplier/{id}', [App\Http\Controllers\UserController::class, 'supplierdetail'])->name('supplierdetail');
+Route::post('/admin/supplier', [App\Http\Controllers\UserController::class, 'suppliercreate'])->name('suppliercreate');
+Route::put('/admin/supplier', [App\Http\Controllers\UserController::class, 'supplieredit'])->name('supplieredit');
+Route::delete('/admin/supplier/{id}', [App\Http\Controllers\UserController::class, 'supplierdelete'])->name('supplierdelete');
+
+Route::get('/admin/agen', [App\Http\Controllers\UserController::class, 'agen'])->name('agenindex');
+Route::post('/admin/agen', [App\Http\Controllers\UserController::class, 'agencreate'])->name('agencreate');
+Route::put('/admin/agen', [App\Http\Controllers\UserController::class, 'agenedit'])->name('agenedit');
+Route::delete('/admin/agen', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
+
