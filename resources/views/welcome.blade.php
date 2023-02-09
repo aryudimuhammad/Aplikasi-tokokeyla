@@ -112,21 +112,21 @@
                     <h1>{{ $d->nama_barang }}</h1>
                     <p class="card-text">{{$d->keterangan}}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">Rp. {{number_format($d->harga, 0, ',', '.') }},-</small>
+                        <h4 class="text-muted">Rp. {{number_format($d->harga, 0, ',', '.') }},-</h4>
                         <div class="btn-group">
                             @if(Route::has('login'))
                             @auth
-                            <!-- <form method="POST" action="{{route('cart' , ['id' => Auth()->user()->id])}}"> -->
+                            <form method="POST" action="#">
                                 @csrf
                                 <input type="text" hidden name="produk_id" value="{{$d->id}}">
                                 <input type="text" hidden name="user_id" value="{{ Auth()->user()->id}}">
 
-                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-sm btn-outline-secondary">Detail</a>
-                                <button type="submit" class="btn btn-sm btn-outline-secondary">Tambahkan Cart</button>
-                            <!-- </form> -->
+                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>
+                                <a type="submit" class="btn btn-primary">Tambahkan Cart</a>
+                            </form>
                             @else
-                            <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-sm btn-outline-secondary">Detail</a>
-                            <button type="submit" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambahkan Cart</button>
+                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>
+                                <a type="submit" class="btn btn-primary">Tambahkan Cart</a>
                             @endauth
                             @endif
                         </div>

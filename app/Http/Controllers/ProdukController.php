@@ -20,11 +20,9 @@ class ProdukController extends Controller
 
     public function detail()
     {
-        $carousel = Produk::orderBy('id', 'desc')->paginate(3);
-        $kategori = Kategori::orderBy('id', 'desc')->get();
-        $produk = Produk::orderBy('id', 'desc')->paginate(9)->withQueryString();
+        $data = Produk::orderBy('id', 'desc')->first();
 
-        return view('welcome', compact('produk','carousel','kategori'));
+        return view('home.detail', compact('data'));
     }
 
     public function index()

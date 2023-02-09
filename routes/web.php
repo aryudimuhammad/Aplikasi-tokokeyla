@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ProdukController::class, 'welcome'])->name('welcome');
 Route::get('/detail', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
+Route::get('/cart', [App\Http\Controllers\ProdukController::class, 'detail'])->name('cart');
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
