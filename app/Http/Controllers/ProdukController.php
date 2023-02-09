@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Models\Produk;
 use App\Models\Satuan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -24,6 +25,16 @@ class ProdukController extends Controller
 
         return view('home.detail', compact('data'));
     }
+
+    public function profil()
+    {
+        $data = User::orderBy('id', 'desc')->first();
+
+        return view('home.profil', compact('data'));
+    }
+
+
+    //--------------------- Admin -------------------vvv
 
     public function index()
     {

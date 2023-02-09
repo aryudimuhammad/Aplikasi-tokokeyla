@@ -116,13 +116,13 @@
                         <div class="btn-group">
                             @if(Route::has('login'))
                             @auth
-                            <form method="POST" action="#">
+                            <form method="POST" action="{{ route ('cart' , ['id' => Auth()->user()->id])}}">
                                 @csrf
                                 <input type="text" hidden name="produk_id" value="{{$d->id}}">
                                 <input type="text" hidden name="user_id" value="{{ Auth()->user()->id}}">
 
                                 <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>
-                                <a type="submit" class="btn btn-primary">Tambahkan Cart</a>
+                                <button type="submit" class="btn btn-primary">Tambahkan Cart</button>
                             </form>
                             @else
                                 <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>

@@ -10,10 +10,10 @@
         </div>
       </div>
       <div class="col-12 col-sm-6">
-        <h3 class="my-3">{{$data->nama_barang}}</h3>
-        <small>Kategori : {{$data->kategori->nama_kategori}}</small>
+        <h2 class="my-3">{{$data->nama_barang}}</h2>
+        <h4>Kategori : {{$data->kategori->nama_kategori}}</h4>
         <br>
-        <small>Stok : {{$data->stok}}</small>
+        <h4>Stok : {{$data->stok}}</h4>
         <br><br>
         <p>{{$data->keterangan}}</p>
 
@@ -66,4 +66,6 @@
 </div>
 </div>
 </div>
+
+<br><br><br><br><br>
 @endsection

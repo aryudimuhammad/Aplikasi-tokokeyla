@@ -604,15 +604,7 @@ padding: 35px 0 180px;}
     padding: 10px;
     width: 100%;
 }
-.newsletter-form input[type="submit"] {
-    background: none repeat scroll 0 0 #5a88ca;
-    border: medium none;
-    color: #fff;
-    display: inline-block;
-    font-size: 18px;
-    padding: 7px 20px;
-    text-transform: uppercase;border: 1px solid #5a88ca;
-}
+
 .newsletter-form input[type="submit"]:hover {background: #222;border-color: #666}
 .newsletter-form {
     margin-top: 25px;
@@ -711,18 +703,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
     padding: 10px;
 }
-input[type="submit"], button[type=submit] {
-    background: none repeat scroll 0 0 #5a88ca;
-    border: medium none;
-    color: #fff;
-    padding: 11px 20px;
-    text-transform: uppercase;
-}
-input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
-.single-sidebar input[type="text"] {
-    margin-bottom: 10px;
-    width: 100%;
-}
+
 .thubmnail-recent {
     margin-bottom: 30px;
     overflow: hidden;

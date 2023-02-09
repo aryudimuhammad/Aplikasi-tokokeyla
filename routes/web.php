@@ -21,8 +21,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\ProdukController::class, 'welcome'])->name('welcome');
+Route::get('/profil', [App\Http\Controllers\ProdukController::class, 'profil'])->name('profil');
 Route::get('/detail', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
-Route::get('/cart', [App\Http\Controllers\ProdukController::class, 'detail'])->name('cart');
+Route::get('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
+Route::post('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
+Route::put('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cartjumlah'])->name('cartjumlah');
+Route::delete('/cart/delete/{id}', [App\Http\Controllers\pesananController::class, 'cartdelete'])->name('cartdelete');
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
