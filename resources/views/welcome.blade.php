@@ -125,8 +125,8 @@
                                 <button type="submit" class="btn btn-primary">Tambahkan Cart</button>
                             </form>
                             @else
-                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>
-                                <a type="submit" class="btn btn-primary">Tambahkan Cart</a>
+                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a> &NonBreakingSpace;
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambahkan Cart</button>
                             @endauth
                             @endif
                         </div>
@@ -149,5 +149,5 @@
         </div>
     </div> <!-- End main content area -->
 
-
+@include('home.logindahulu')
 @endsection

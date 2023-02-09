@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+
     @yield('head')
   </head>
   <body>
@@ -59,6 +60,7 @@
     <script type="text/javascript" src="{{ asset ('js/bxslider.min.js')}}"></script>
 	<script type="text/javascript" src="{{ asset ('js/script.slider.js')}}"></script>
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     @yield('script')
   </body>
 </html>
