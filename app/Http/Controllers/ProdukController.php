@@ -53,6 +53,7 @@ class ProdukController extends Controller
         $data->satuan_id = $request->satuan_id;
         $data->stok = $request->stok;
         $data->harga = $request->harga;
+        $data->gambar = $request->file('gambar')->store('post-images');
         $data->save();
 
         return back();
@@ -66,6 +67,9 @@ class ProdukController extends Controller
         $data->satuan_id = $request->satuan_id;
         $data->stok = $request->stok;
         $data->harga = $request->harga;
+        if($request->gambar){
+            $data->gambar = $request->file('gambar')->store('post-image');
+        }
         $data->update();
 
         return back();

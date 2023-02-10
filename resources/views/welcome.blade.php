@@ -107,7 +107,7 @@
     @foreach($produk as $d)
         <div class="col">
             <div class="card shadow-sm">
-                <img src="{{ asset ($d->gambar) }}" alt="gambar">
+                <img src="{{ asset ( 'storage/' . $d->gambar) }}" style="width:350px; height:350px" alt="gambar">
                 <div class="card-body">
                     <h1>{{ $d->nama_barang }}</h1>
                     <p class="card-text">{{$d->keterangan}}</p>

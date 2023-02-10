@@ -61,7 +61,7 @@
                         <td scope="col" class="text-center">{{ $d->kategori->nama_kategori }}</td>
                         <td scope="col" class="text-center">{{ $d->satuan->nama_satuan }}</td>
                         <td scope="col" class="text-center">{{ $d->stok }}</td>
-                        <td scope="col" class="text-center">{{ $d->harga }}</td>
+                        <td scope="col" class="text-center">Rp. {{number_format($d->harga, 0, ',', '.') }},-</td>
                         <td scope="col" class="text-center">
                             <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_barang="{{$d->nama_barang}}" data-kateogri="{{$d->kateogri_id}}" data-satuan="{{$d->satuan_id}}" data-stok="{{$d->stok}}" data-harga="{{$d->harga}}" data-toggle="modal" data-target="#editModal">
                                 <i class="fa fa-pencil color-muted m-r-5"></i>

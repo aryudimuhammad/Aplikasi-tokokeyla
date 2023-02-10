@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <div class="body">
                         @csrf
                         <label>Nama Produk</label>
@@ -52,6 +52,10 @@
                             @error('harga')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
 
+                        <label for="gambar">gambar</label>
+                        <div class="form-group">
+                            <input type="file" class="form-control" id="gambar" name="gambar" value="{{old('gambar')}}">
+                        </div>
                         <br>
                     </div>
                     <div class="modal-footer">

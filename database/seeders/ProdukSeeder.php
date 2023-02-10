@@ -56,7 +56,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '1',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/gas.png',
+            'gambar' => 'post-images/gas.png',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk2',
@@ -64,7 +64,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '2',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
 
         ]);
         DB::table('produks')->insert([
@@ -73,7 +73,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '3',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk4',
@@ -81,7 +81,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '4',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk5',
@@ -89,7 +89,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk6',
@@ -97,7 +97,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/a.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk7',
@@ -105,7 +105,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk8',
@@ -113,7 +113,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk9',
@@ -121,7 +121,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk18',
@@ -129,7 +129,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'produk99',
@@ -137,7 +137,7 @@ class ProdukSeeder extends Seeder
             'satuan_id' => '5',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'img/beras.jpeg',
+            'gambar' => 'post-images/beras.jpg',
         ]);
     }
 }

@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {{ method_field('put') }}
                     @csrf
                     <div class=" modal-body">
@@ -55,6 +55,12 @@
                                 id="harga" autofocus>
                             @error('harga')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
+
+                        <label for="gambar">gambar</label>
+                        <div class="form-group">
+                            <input type="file" class="form-control" id="gambar" name="gambar" value="{{old('gambar')}}">
+                        </div>
+                        <br>
 
                     </div>
                     <div class="edit modal-footer">
