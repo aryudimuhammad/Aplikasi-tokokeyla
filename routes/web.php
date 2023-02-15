@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth', 'Checkrole:1,2']], function ()
+{
+
 Route::get('/', [App\Http\Controllers\ProdukController::class, 'welcome'])->name('welcome');
 Route::get('/profil', [App\Http\Controllers\ProdukController::class, 'profil'])->name('profil');
 Route::get('/detail', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
@@ -27,6 +30,15 @@ Route::get('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart']
 Route::post('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
 Route::put('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cartjumlah'])->name('cartjumlah');
 Route::delete('/cart/delete/{id}', [App\Http\Controllers\pesananController::class, 'cartdelete'])->name('cartdelete');
+
+});
+
+
+
+
+
+Route::group(['middleware' => ['auth', 'Checkrole:1']], function ()
+{
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
@@ -55,4 +67,6 @@ Route::get('/admin/agen', [App\Http\Controllers\UserController::class, 'agen'])-
 Route::post('/admin/agen', [App\Http\Controllers\UserController::class, 'agencreate'])->name('agencreate');
 Route::put('/admin/agen', [App\Http\Controllers\UserController::class, 'agenedit'])->name('agenedit');
 Route::delete('/admin/agen/{id}', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
+
+});
 
