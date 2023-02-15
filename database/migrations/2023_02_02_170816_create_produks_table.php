@@ -21,8 +21,8 @@ class CreateProduksTable extends Migration
             $table->integer('stok')->nullable();
             $table->integer('harga')->nullable();
             $table->string('gambar')->nullable();
-            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('restrict');
-            $table->foreign('satuan_id')->references('id')->on('satuans')->onDelete('restrict');
+            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('Cascade');
+            $table->foreign('satuan_id')->references('id')->on('satuans')->onDelete('Cascade');
             $table->timestamps();
         });
     }

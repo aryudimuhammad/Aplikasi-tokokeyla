@@ -20,7 +20,7 @@ class KategoriController extends Controller
         $data->nama_kategori = $request->nama_kategori;
         $data->save();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Ditambahkan.');
     }
 
     public function edit(Request $request)
@@ -29,7 +29,7 @@ class KategoriController extends Controller
         $data->nama_kategori = $request->nama_kategori;
         $data->update();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Diubah.');
     }
 
     public function delete($id)
@@ -37,6 +37,6 @@ class KategoriController extends Controller
         $data = Kategori::find($id);
         $data->delete();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Dihapus.');
     }
 }
