@@ -56,7 +56,7 @@ class ProdukController extends Controller
         $data->gambar = $request->file('gambar')->store('post-images');
         $data->save();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Ditambah.');
     }
 
     public function edit(Request $request)
@@ -72,7 +72,7 @@ class ProdukController extends Controller
         }
         $data->update();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Diubah.');
     }
 
     public function delete($id)
@@ -80,6 +80,6 @@ class ProdukController extends Controller
         $data = Produk::find($id);
         $data->delete();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Dihapus.');
     }
 }

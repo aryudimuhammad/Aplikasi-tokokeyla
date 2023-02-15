@@ -33,17 +33,17 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 Route::get('/admin/produk', [App\Http\Controllers\ProdukController::class, 'index'])->name('produkindex');
 Route::post('/admin/produk', [App\Http\Controllers\ProdukController::class, 'create'])->name('produkcreate');
 Route::put('/admin/produk', [App\Http\Controllers\ProdukController::class, 'edit'])->name('produkedit');
-Route::delete('/admin/produk', [App\Http\Controllers\ProdukController::class, 'delete'])->name('produkdelete');
+Route::delete('/admin/produk/{id}', [App\Http\Controllers\ProdukController::class, 'delete'])->name('produkdelete');
 
 Route::get('/admin/kategori', [App\Http\Controllers\KategoriController::class, 'index'])->name('kategoriindex');
 Route::post('/admin/kategori', [App\Http\Controllers\KategoriController::class, 'create'])->name('kategoricreate');
 Route::put('/admin/kategori', [App\Http\Controllers\KategoriController::class, 'edit'])->name('kategoriedit');
-Route::delete('/admin/kategori', [App\Http\Controllers\KategoriController::class, 'delete'])->name('kategoridelete');
+Route::delete('/admin/kategori/{id}', [App\Http\Controllers\KategoriController::class, 'delete'])->name('kategoridelete');
 
 Route::get('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'index'])->name('satuanindex');
 Route::post('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'create'])->name('satuancreate');
 Route::put('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'edit'])->name('satuanedit');
-Route::delete('/admin/satuan', [App\Http\Controllers\SatuanController::class, 'delete'])->name('satuandelete');
+Route::delete('/admin/satuan/{id}', [App\Http\Controllers\SatuanController::class, 'delete'])->name('satuandelete');
 
 Route::get('/admin/supplier', [App\Http\Controllers\UserController::class, 'supplier'])->name('supplierindex');
 Route::get('/admin/supplier/{id}', [App\Http\Controllers\UserController::class, 'supplierdetail'])->name('supplierdetail');
@@ -54,5 +54,5 @@ Route::delete('/admin/supplier/{id}', [App\Http\Controllers\UserController::clas
 Route::get('/admin/agen', [App\Http\Controllers\UserController::class, 'agen'])->name('agenindex');
 Route::post('/admin/agen', [App\Http\Controllers\UserController::class, 'agencreate'])->name('agencreate');
 Route::put('/admin/agen', [App\Http\Controllers\UserController::class, 'agenedit'])->name('agenedit');
-Route::delete('/admin/agen', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
+Route::delete('/admin/agen/{id}', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
 

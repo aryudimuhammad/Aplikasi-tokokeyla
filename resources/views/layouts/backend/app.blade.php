@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" i
-  ntegrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+  ntegrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   @yield('head')
 </head>
@@ -20,7 +20,7 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
   </div>
-
+  @include('sweetalert::alert')
   @include('layouts.backend.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
@@ -45,6 +45,7 @@
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 <script src="{{asset('dist/js/demo.js')}}"></script>
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
 @yield('script')
 </body>
 </html>

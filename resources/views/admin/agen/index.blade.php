@@ -54,6 +54,7 @@
                     <!-- <a class="btn btn-xs btn-info text-white" href="{{route('supplierdetail',['id' => $d->id])}}">Lihat Produk</a> -->
                     <button class="btn btn-sm btn-info" data-id="{{$d->id}}" data-name="{{$d->name}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></button>
                     <a class="btn btn-sm btn-danger" href="{{route ('supplierdelete', ['id' =>$d->id])}}"><i class="fas fa-trash"></i></a>
+                    <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('agendelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                     </td>
                   </tr>
                 @endforeach
@@ -72,6 +73,7 @@
 
 @include('admin.agen.create')
 @include('admin.agen.edit')
+@include('admin.agen.delete')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -121,5 +123,12 @@
         modal.find('.modal-body #alamat').val(alamat);
         modal.find('.modal-body #telepon').val(telepon);
     })
+</script>
+
+<script>
+    $('.delete').on('click', function(){
+    var link = $(this).data('link');
+    $('#formDelete').attr('action',link)
+    });
 </script>
 @endsection

@@ -20,7 +20,7 @@ class SatuanController extends Controller
         $data->nama_satuan = $request->nama_satuan;
         $data->save();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Ditambahkan.');
     }
 
     public function edit(Request $request)
@@ -29,7 +29,7 @@ class SatuanController extends Controller
         $data->nama_satuan = $request->nama_satuan;
         $data->update();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Diubah.');
     }
 
     public function delete($id)
@@ -37,6 +37,6 @@ class SatuanController extends Controller
         $data = Satuan::find($id);
         $data->delete();
 
-        return back();
+        return back()->with('success', 'Data Berhasil Dihapus.');
     }
 }

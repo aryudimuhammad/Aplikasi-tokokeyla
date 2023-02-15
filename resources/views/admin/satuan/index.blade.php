@@ -58,7 +58,7 @@
                             <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_satuan="{{$d->nama_satuan}}" data-toggle="modal" data-target="#editModal">
                                 <i class="fa fa-pencil color-muted m-r-5"></i>
                             </a>
-                            <a class="delete btn btn-sm btn-danger text-white" data-id="{{$d->id}}" href="#"><i class="fa-solid fa-trash"></i></a>
+                            <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('satuandelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -73,6 +73,7 @@
 </section>
 @include('admin.satuan.create')
 @include('admin.satuan.edit')
+@include('admin.satuan.delete')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -128,6 +129,13 @@
         modal.find('.modal-body #id').val(id)
         modal.find('.modal-body #stok').val(stok);
     })
+</script>
+
+<script>
+    $('.delete').on('click', function(){
+    var link = $(this).data('link');
+    $('#formDelete').attr('action',link)
+    });
 </script>
 @endsection
 

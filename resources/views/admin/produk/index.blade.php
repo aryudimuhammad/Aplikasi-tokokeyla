@@ -63,10 +63,8 @@
                         <td scope="col" class="text-center">{{ $d->stok }}</td>
                         <td scope="col" class="text-center">Rp. {{number_format($d->harga, 0, ',', '.') }},-</td>
                         <td scope="col" class="text-center">
-                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_barang="{{$d->nama_barang}}" data-kateogri="{{$d->kateogri_id}}" data-satuan="{{$d->satuan_id}}" data-stok="{{$d->stok}}" data-harga="{{$d->harga}}" data-toggle="modal" data-target="#editModal">
-                                <i class="fa fa-pencil color-muted m-r-5"></i>
-                            </a>
-                            <a class="delete btn btn-sm btn-danger text-white" data-id="{{$d->id}}" href="#"><i class="fa-solid fa-trash"></i></a>
+                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_barang="{{$d->nama_barang}}" data-kateogri="{{$d->kateogri_id}}" data-satuan="{{$d->satuan_id}}" data-stok="{{$d->stok}}" data-harga="{{$d->harga}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></a>
+                            <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('produkdelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -81,6 +79,7 @@
 </section>
 @include('admin.produk.create')
 @include('admin.produk.edit')
+@include('admin.produk.delete')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -145,6 +144,13 @@
         modal.find('.modal-body #id').val(id)
         modal.find('.modal-body #stok').val(stok);
     })
+</script>
+
+<script>
+    $('.delete').on('click', function(){
+    var link = $(this).data('link');
+    $('#formDelete').attr('action',link)
+    });
 </script>
 @endsection
 
