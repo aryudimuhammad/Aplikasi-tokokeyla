@@ -37,6 +37,10 @@
                         <button class="btn btn-outline-info dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span><i class="feather icon-printer"></i> Cetak Data</span>
                         </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" target="_blank" href="{{route('cetakproduk')}}">Keseluruhan</a>
+                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktgl">Berdasarkan Tanggal</button>
+                        </div>
                     </div>
                 </div>
               <!-- /.card-header -->
@@ -80,6 +84,7 @@
 @include('admin.produk.create')
 @include('admin.produk.edit')
 @include('admin.produk.delete')
+@include('admin.produk.cetaktgl')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

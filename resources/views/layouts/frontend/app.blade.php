@@ -33,7 +33,7 @@
     @yield('head')
   </head>
   <body>
-
+    @include('sweetalert::alert')
     @include('layouts.frontend.header')
 
     @yield('content')
@@ -61,6 +61,7 @@
 	<script type="text/javascript" src="{{ asset ('js/script.slider.js')}}"></script>
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
     @yield('script')
   </body>
 </html>

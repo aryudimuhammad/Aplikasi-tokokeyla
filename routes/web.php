@@ -68,5 +68,7 @@ Route::post('/admin/agen', [App\Http\Controllers\UserController::class, 'agencre
 Route::put('/admin/agen', [App\Http\Controllers\UserController::class, 'agenedit'])->name('agenedit');
 Route::delete('/admin/agen/{id}', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
 
+Route::get('/admin/cetak/produk', [App\Http\Controllers\CetakController::class, 'cetakproduk'])->name('cetakproduk');
+Route::get('/admin/cetak/produk/tgl', [App\Http\Controllers\CetakController::class, 'cetakproduktgl'])->name('cetakproduktgl');
 });
 
