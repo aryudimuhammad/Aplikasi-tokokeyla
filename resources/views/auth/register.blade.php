@@ -1,8 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.frontend.app')
 @section('title')
 Form Daftar
 @endsection
 @section('content')
+<br><br><br><br>
 <div class="container">
     <div class="row justify-content-center">
     <div class="register-box">
@@ -24,6 +25,7 @@ Form Daftar
                             </div>
                         </div>
                         </div>
+
                         <div class="input-group mb-3">
                         <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                         <div class="input-group-append">
@@ -34,7 +36,7 @@ Form Daftar
                         </div>
 
                         <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="telepon" id="telepon" placeholder="Nomor Telepon">
+                        <input type="number" class="form-control" name="telepon" id="telepon" value="{{old('telepon')}}" required autocomplete="telepon" placeholder="Nomor Telepon">
                         <div class="input-group-append">
                             <div class="input-group-text">
                             <span class="fas fa-mobile"></span>
@@ -43,7 +45,7 @@ Form Daftar
                         </div>
 
                         <div class="input-group mb-3">
-                        <textarea type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat Lengkap"></textarea>
+                        <textarea class="form-control" id="alamat" name="alamat"  required placeholder="Alamat Lengkap"></textarea>
                         <div class="input-group-append">
                             <div class="input-group-text">
                             <span class="fas fa-location-arrow"></span>
@@ -89,4 +91,5 @@ Form Daftar
     </div>
     </div>
 </div>
+<br><br><br><br><br>
 @endsection
