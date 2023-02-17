@@ -12,11 +12,11 @@ class ProdukController extends Controller
 {
     public function welcome()
     {
-        $carousel = Produk::orderBy('id', 'desc')->paginate(3);
+        // $carousel = Produk::orderBy('id', 'desc')->paginate(3);
         $kategori = Kategori::orderBy('id', 'desc')->get();
         $produk = Produk::orderBy('id', 'desc')->paginate(9)->withQueryString();
 
-        return view('welcome', compact('produk','carousel','kategori'));
+        return view('welcome', compact('produk','kategori'));
     }
 
     public function detail()

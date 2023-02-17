@@ -3,9 +3,15 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        @if (Auth::user()->gambar == null)
         <div class="image">
           <img src="{{asset('/img/index.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
+        @else
+        <div class="image">
+          <img src="{{ asset ( 'storage/' . Auth::user()->gambar) }}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        @endif
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
@@ -29,53 +35,54 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link">
-              <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
+            <a href="{{route('dashboard')}}" class="nav-link">
+              <i class="fa-sharp fa-solid fa-gauge-high"></i>
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('produkindex')}}" class="nav-link">
-            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+            <i class="fa-sharp fa-solid fa-box-archive"></i>
               <p>Produk</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('kategoriindex')}}" class="nav-link">
-            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+            <i class="fa-sharp fa-solid fa-box-open"></i>
               <p>Kategori</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('satuanindex')}}" class="nav-link">
-            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+            <i class="fa-sharp fa-solid fa-box-open"></i>
               <p>Satuan</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('supplierindex')}}" class="nav-link">
-            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
+            <i class="fa-sharp fa-solid fa-users"></i>
               <p>Supplier</p>
             </a>
           </li>
 
           <li class="nav-item menu-open">
             <a href="{{route('agenindex')}}" class="nav-link">
-            <!-- <i class="fa-sharp fa-solid fa-box-archive"></i> -->
-              <p>Agen</p>
-            </a>
-          </li>
+            <i class="fa-sharp fa-solid fa-users"></i>
+            <p>Customer</p>
+        </a>
+    </li>
 
-          <li class="nav-item menu-open">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white">
-            Logout
-            </a>
+    <li class="nav-item menu-open">
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+             <p> Log Out</p>
+        </a>
             <form id="logout-form" action="{{ route('logout') }}"
-                                method="POST" class="d-none">
+                             `   method="POST" class="d-none">
                                 @csrf
             </form>
            </li>

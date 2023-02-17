@@ -20,7 +20,7 @@
 <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-3">
+          <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
@@ -65,9 +65,12 @@
                 <span class="info-box-number">2,000</span>
               </div>
             </div>
-          </div>
+          </div> -->
+
+        <img src="{{asset ('img/logo1.png')}}" style="margin:auto;" alt="">
+
         </div>
 
       </div>
-    </section>
+</section>
 @endsection

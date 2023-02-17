@@ -3,16 +3,16 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                        <p> Jl. Trikora, Kel.Guntung Manggis, Kec. Landasan Ulin, Kota Banjarbaru, Kalimantan Selatan</a></p>
+                        <!-- <br>
+                        <h1>Toko Keyla</h1> -->
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="footer-card-icon">
-                        <i class="fa fa-cc-discover"></i>
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
+                        <!-- <small>Toko Keyla</small> -->
+                        <img src="{{ asset ('img/logo1.png') }}" style="margin-top:12px; width:60px; height:60px;" alt="">
                     </div>
                 </div>
             </div>
