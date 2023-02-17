@@ -120,18 +120,21 @@
 <div class="py-5 col">
 <h4 class="mb-3">Metode Pembayaran</h4>
 <div class="my-3">
-  <div class="custom-control custom-checkbox">
-    <input id="credit" name="paymentMethod" type="checkbox" value="Credit Card" class="custom-control-input" checked required>
-    <label class="custom-control-label" for="credit">Credit card</label>
+
+
+  <div class="custom-control custom-radio">
+    <input type="radio" id="credit" name="paymentMethod" class="custom-control-input">
+    <label class="custom-control-label" for="credit">Credit Card</label>
   </div>
-  <div class="custom-control custom-checkbox">
-    <input id="dana" name="paymentMethod" type="checkbox" value="Dana" class="custom-control-input" required>
-    <label class="custom-control-label" for="Dana">Dana</label>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="dana" name="paymentMethod" class="custom-control-input">
+    <label class="custom-control-label" for="dana">Dana</label>
   </div>
-  <div class="custom-control custom-checkbox">
-    <input id="ovo" name="paymentMethod" type="checkbox" value="Ovo" class="custom-control-input" required>
-    <label class="custom-control-label" for="Ovo">Ovo</label>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="ovo" name="paymentMethod" class="custom-control-input">
+    <label class="custom-control-label" for="ovo">Ovo</label>
   </div>
+
 </div>
 </div>
 

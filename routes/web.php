@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
+Route::get('/', [App\Http\Controllers\ProdukController::class, 'welcome'])->name('welcome');
 
 Route::group(['middleware' => ['auth', 'Checkrole:1,2']], function ()
 {
 
-Route::get('/', [App\Http\Controllers\ProdukController::class, 'welcome'])->name('welcome');
 Route::get('/profil', [App\Http\Controllers\ProdukController::class, 'profil'])->name('profil');
 Route::get('/detail', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
 Route::get('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');

@@ -32,7 +32,7 @@
             @csrf
                 <input type="text" hidden name="produk_id" value="{{$data->id}}">
                 <input type="text" hidden name="user_id" value="{{ Auth()->user()->id}}">
-                <button type="submit" class="btn btn-primary btn-lg btn-flat" data-toggle="modal" data-target="#exampleModal">Masukkan Cart</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-flat">Masukkan Cart</button>
                 <a type="button" href="{{ route ('welcome')}}" class="btn btn-danger btn-lg btn-flat">Kembali ke Halaman Awal</a>
             </form>
             @else

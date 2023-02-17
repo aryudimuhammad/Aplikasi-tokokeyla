@@ -11,7 +11,7 @@
 <li><a href="checkout.html"><i class="fa fa-bag-shopping"></i> Checkout</a></li>
 <li>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        <i class="fa fa-user"></i> Logout
+        <i class="fa fa-right-from-bracket"></i> Logout
     </a>
     <form id="logout-form" action="{{ route('logout') }}"
     method="POST" class="d-none">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('head')
+Form Login
+@endsection
 @section('content')
 {{-- <div class="container">
     <div class="row justify-content-center">
@@ -79,11 +81,11 @@
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Masukkan Email & Password</p>
-  
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
           <div class="input-group mb-3">
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" 
+            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
             value="{{ old('email') }}" required autocomplete="email" placeholder="Email.." autofocus>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -102,10 +104,10 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="remember">
+                <!-- <input type="checkbox" id="remember">
                 <label for="remember">
                   Remember Me
-                </label>
+                </label> -->
               </div>
             </div>
             <!-- /.col -->
@@ -117,15 +119,12 @@
             <!-- /.col -->
           </div>
         </form>
-  
+
         <!-- /.social-auth-links -->
-  
-        {{-- <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p> --}}
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
-        </p>
+
+        <!-- <p class="mb-0">
+          <a href="{{ route ('register')}}" class="text-center"><b>Daftar</b></a>
+        </p> -->
       </div>
       <!-- /.login-card-body -->
     </div>
