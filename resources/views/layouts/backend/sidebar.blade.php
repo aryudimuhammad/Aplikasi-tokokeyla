@@ -69,23 +69,33 @@
             </a>
           </li>
 
-          <li class="nav-item menu-open">
+        <li class="nav-item menu-open">
             <a href="{{route('agenindex')}}" class="nav-link">
             <i class="fa-sharp fa-solid fa-users"></i>
             <p>Customer</p>
-        </a>
-    </li>
+            </a>
+        </li>
 
-    <li class="nav-item menu-open">
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
-            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
-             <p> Log Out</p>
-        </a>
-            <form id="logout-form" action="{{ route('logout') }}"
-                             `   method="POST" class="d-none">
-                                @csrf
-            </form>
-           </li>
+        <li class="nav-item menu-open">
+            <a href="{{route('welcome')}}" class="nav-link">
+            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+            <p>Kembali</p>
+            </a>
+        </li>
+
+        <li class="nav-item menu-open">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+                <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+                <p> Log Out</p>
+            </a>
+                <form id="logout-form" action="{{ route('logout') }}"
+                                `   method="POST" class="d-none">
+                                    @csrf
+                </form>
+        </li>
+
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

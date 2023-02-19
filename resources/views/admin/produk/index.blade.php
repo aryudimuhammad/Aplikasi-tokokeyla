@@ -63,7 +63,7 @@
                         <td scope="col" class="text-center">{{ $loop->iteration }}</td>
                         <td scope="col" class="text-center">{{ $d->nama_barang }}</td>
                         <td scope="col" class="text-center">{{ $d->kategori->nama_kategori }}</td>
-                        <td scope="col" class="text-center">{{ $d->satuan->nama_satuan }}</td>
+                        <td scope="col" class="text-center">{{ $d->pcs }} {{ $d->satuan->nama_satuan }}</td>
                         <td scope="col" class="text-center">{{ $d->stok }}</td>
                         <td scope="col" class="text-center">Rp. {{number_format($d->harga, 0, ',', '.') }},-</td>
                         <td scope="col" class="text-center">

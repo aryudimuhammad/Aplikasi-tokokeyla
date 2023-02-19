@@ -18,6 +18,7 @@ class CreateProduksTable extends Migration
             $table->string('nama_barang');
             $table->unsignedBigInteger('kategori_id');
             $table->unsignedBigInteger('satuan_id');
+            $table->string('pcs')->nullable();
             $table->integer('stok')->nullable();
             $table->integer('harga')->nullable();
             $table->string('gambar')->nullable();
