@@ -8,7 +8,7 @@ Form Daftar
     <div class="row justify-content-center">
     <div class="register-box">
                 <div class="register-logo">
-                    <b>Form Daftar Toko Keyla</b>
+                    <b>Form Daftar Toko Kayla</b>
                 </div>
 
                 <div class="card">

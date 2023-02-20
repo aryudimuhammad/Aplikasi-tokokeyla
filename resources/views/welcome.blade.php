@@ -1,5 +1,5 @@
 @extends('layouts.frontend.app')
-@section('title') Toko Keyla @endsection
+@section('title') Toko Kayla @endsection
 @section('content')
     <div class="mainmenu-area">
         <div class="container">

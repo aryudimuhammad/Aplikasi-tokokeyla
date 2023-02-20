@@ -1,5 +1,5 @@
 @extends('layouts.frontend.app')
-@section('title') Toko Keyla @endsection
+@section('title') Toko Kayla @endsection
 @section('content')
 <section class="py-5 text-center container">
     <div class="row">

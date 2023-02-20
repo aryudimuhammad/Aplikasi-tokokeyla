@@ -94,7 +94,7 @@
             <img class="sizeimg" src="logo/logo.png">
         </div> -->
         <div class="headtext">
-            <h2 style="margin:0px;">Toko Keyla</h2>
+            <h2 style="margin:0px;">Toko Kayla</h2>
             <p style="margin:0px;">Jl. Trikora, Kel.Guntung Manggis, Kec. Landasan Ulin, Kota Banjarbaru, Kalimantan Selatan</p>
             <p style="margin:0px;">Telp. 081953000765</p>
         </div>
