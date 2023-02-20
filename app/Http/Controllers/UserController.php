@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function supplier()
     {
-        $data = User::orderBy('id', 'desc')->where('role', 2)->get();
+        $data = User::orderBy('id', 'desc')->where('role', 3)->get();
 
         return view('admin.supplier.index',compact('data'));
     }
@@ -22,7 +22,7 @@ class UserController extends Controller
         $data->alamat = $request->alamat;
         $data->telepon = $request->telepon;
         $data->password = Hash::make($data['password']);
-        $data->role = 2;
+        $data->role = 3;
         $data->save();
 
         return back()->with('success', 'Data Berhasil Disimpan.');
@@ -55,7 +55,7 @@ class UserController extends Controller
 
     public function agen()
     {
-        $data = User::orderBy('id', 'desc')->where('role', 3)->get();
+        $data = User::orderBy('id', 'desc')->where('role', 2)->get();
 
         return view('admin.agen.index',compact('data'));
     }
@@ -67,7 +67,7 @@ class UserController extends Controller
         $data->alamat = $request->alamat;
         $data->telepon = $request->telepon;
         $data->password = Hash::make($data['password']);
-        $data->role = 3;
+        $data->role = 2;
         $data->save();
 
         return back()->with('success', 'Data Berhasil Disimpan.');
