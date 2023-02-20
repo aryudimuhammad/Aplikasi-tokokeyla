@@ -102,8 +102,8 @@
                                 <input type="text" hidden name="produk_id" value="{{$d->id}}">
                                 <input type="text" hidden name="user_id" value="{{ Auth()->user()->id}}">
 
-                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a>
-                                <button type="submit" class="btn btn-primary">Tambahkan Cart</button>
+                                <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-sm btn-info">Detail</a>
+                                <button type="submit" class="btn btn-sm btn-primary">Tambahkan Cart</button>
                             </form>
                             @else
                                 <a type="button" href="{{route('detail' , ['id' => $d->id])}}" class="btn btn-info">Detail</a> &NonBreakingSpace;
