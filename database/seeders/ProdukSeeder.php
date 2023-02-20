@@ -66,7 +66,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '5',
             'stok' => '6',
             'harga' => '62000',
-            'gambar' => 'post-images/BerasNgawitiMas.png',
+            'gambar' => 'post-images/BerasNgawitiMas.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Rojolele',
@@ -75,7 +75,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '2.5',
             'stok' => '5',
             'harga' => '27000',
-            'gambar' => 'post-images/berasrojolele.png',
+            'gambar' => 'post-images/berasrojolele.jpeg',
 
         ]);
         DB::table('produks')->insert([
@@ -85,7 +85,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '13',
             'harga' => '15000',
-            'gambar' => 'post-images/berassania.png',
+            'gambar' => 'post-images/berassania.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Setra Ramos Cap Topi Koki',
@@ -94,7 +94,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '23',
             'harga' => '10000',
-            'gambar' => 'post-images/BerasSetraKoki.png',
+            'gambar' => 'post-images/BerasSetraKoki.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Si Pulen Beras Pandan Wangi',
@@ -103,7 +103,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '16',
             'harga' => '19000',
-            'gambar' => 'post-images/beraspulen.png',
+            'gambar' => 'post-images/beraspulen.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Gulaku',
@@ -112,7 +112,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '23',
             'harga' => '13500',
-            'gambar' => 'post-images/gulaku.png',
+            'gambar' => 'post-images/gulaku.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Kecap ABC',
@@ -121,7 +121,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '700',
             'stok' => '36',
             'harga' => '19000',
-            'gambar' => 'post-images/kecapabc.png',
+            'gambar' => 'post-images/kecapabc.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'IndoMie Goreng',
@@ -130,7 +130,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '7',
             'harga' => '102000',
-            'gambar' => 'post-images/miegoreng.png',
+            'gambar' => 'post-images/miegoreng.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Minyak Goreng Bimoli',
@@ -139,7 +139,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '33',
             'harga' => '26000',
-            'gambar' => 'post-images/minyakbimoli.png',
+            'gambar' => 'post-images/minyakbimoli.jpeg',
         ]);
         DB::table('produks')->insert([
             'nama_barang' => 'Tepung Segitiga Biru',
@@ -148,7 +148,7 @@ class ProdukSeeder extends Seeder
             'pcs' => '1',
             'stok' => '25',
             'harga' => '13500',
-            'gambar' => 'post-images/tepungsegitiga.png',
+            'gambar' => 'post-images/tepungsegitiga.jpeg',
         ]);
     }
 }
