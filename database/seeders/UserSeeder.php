@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123'),
             'role' => 1,
             'alamat' => 'jln.Rahayu',
-            'telepon' => '082151238238',
+            'telepon' => '08215123823',
         ]);
     }
 }

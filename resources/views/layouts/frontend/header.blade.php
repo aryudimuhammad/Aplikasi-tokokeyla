@@ -8,7 +8,7 @@
 @auth
 <li><a href="{{ route ('profil')}}"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a></li>
 <li><a href="{{ route ('cart' , ['id' => Auth::user()->id])}}"><i class="fa fa-cart-shopping"></i> My Cart</a></li>
-<li><a href="checkout.html"><i class="fa fa-bag-shopping"></i> Checkout</a></li>
+<li><a href="{{ route ('checkoutlist' , ['id' => Auth::user()->id])}}"><i class="fa fa-bag-shopping"></i> Checkout</a></li>
 <li>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <i class="fa fa-right-from-bracket"></i> Logout

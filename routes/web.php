@@ -30,6 +30,8 @@ Route::get('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart']
 Route::post('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
 Route::put('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cartjumlah'])->name('cartjumlah');
 Route::delete('/cart/delete/{id}', [App\Http\Controllers\pesananController::class, 'cartdelete'])->name('cartdelete');
+Route::get('/checkoutlist/{id}', [App\Http\Controllers\PesananController::class, 'checkoutlist'])->name('checkoutlist');
+Route::get('/checkout/{id}', [App\Http\Controllers\PesananController::class, 'checkout'])->name('checkout');
 
 });
 

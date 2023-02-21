@@ -36,6 +36,7 @@
       <th scope="col">No.</th>
       <th scope="col">Nama Barang</th>
       <th scope="col">Kategori</th>
+      <th scope="col">Satuan</th>
       <th scope="col">Jumlah Produk</th>
       <th scope="col">Harga Produk</th>
       <th scope="col">Sub Total</th>
@@ -48,6 +49,7 @@
     <td class="text-center">{{$loop->iteration}}</td>
     <td>{{$d->produk->nama_barang}}</td>
     <td>{{$d->produk->kategori->nama_kategori}}</td>
+    <td>{{$d->produk->pcs}} {{$d->produk->satuan->nama_satuan}}</td>
     <td>
     <form action="{{route('cartjumlah',['id' => Auth()->user()->id])}}" method="POST">
         @csrf
@@ -78,6 +80,7 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
         <td>Rp.{{$data1->sum('harga')}},-</td>
         <td></td>
     </tr>
@@ -86,7 +89,7 @@
 </table>
 
 
-<form method="get" action="#" novalidate>
+<form method="get" action="{{ route ('checkout' , ['id' => Auth::user()->id])}}" novalidate>
 @csrf
 <div class="row align-items-start">
 @auth
@@ -120,23 +123,24 @@
 <div class="py-5 col">
 <h4 class="mb-3">Metode Pembayaran</h4>
 <div class="my-3">
-
-
-  <div class="custom-control custom-radio">
-    <input type="radio" id="credit" name="paymentMethod" class="custom-control-input">
-    <label class="custom-control-label" for="credit">Credit Card</label>
+  <div class="form-check">
+    <input id="credit" name="paymentMethod" type="radio" value="Credit Card" class="form-check-input" checked required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="credit">Credit card</label>
   </div>
-  <div class="custom-control custom-radio">
-    <input type="radio" id="dana" name="paymentMethod" class="custom-control-input">
-    <label class="custom-control-label" for="dana">Dana</label>
+  <div class="form-check">
+    <input id="dana" name="paymentMethod" type="radio" value="Dana" class="form-check-input" required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="Dana">Dana</label>
   </div>
-  <div class="custom-control custom-radio">
-    <input type="radio" id="ovo" name="paymentMethod" class="custom-control-input">
-    <label class="custom-control-label" for="ovo">Ovo</label>
+  <div class="form-check">
+    <input id="ovo" name="paymentMethod" type="radio" value="Ovo" class="form-check-input" required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="Ovo">Ovo</label>
   </div>
-
 </div>
 </div>
+
+
+
+
 
 <hr class="my-4">
 <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
