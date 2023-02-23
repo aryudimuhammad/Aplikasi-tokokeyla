@@ -38,8 +38,10 @@
                             <span><i class="feather icon-printer"></i> Cetak Data</span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" target="_blank" href="{{route('cetakproduk')}}">Keseluruhan</a>
-                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktgl">Berdasarkan Tanggal</button>
+                                    <a class="dropdown-item" target="_blank" href="{{route('cetakproduk')}}">Cetak Produk</a>
+                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktglmasuk">Barang Masuk</button>
+                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktglkeluar">Barang Keluar/Terjual</button>
+                                    <a class="dropdown-item" target="_blank" href="{{route('cetakterlaris')}}" target="_blank">Barang Terlaris</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +86,8 @@
 @include('admin.produk.create')
 @include('admin.produk.edit')
 @include('admin.produk.delete')
-@include('admin.produk.cetaktgl')
+@include('admin.produk.cetaktglmasuk')
+@include('admin.produk.cetaktglkeluar')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

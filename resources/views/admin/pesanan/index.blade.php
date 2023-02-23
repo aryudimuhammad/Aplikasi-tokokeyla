@@ -31,8 +31,7 @@
                             <span><i class="feather icon-printer"></i> Cetak Data</span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" target="_blank" href="{{route('cetakproduk')}}">Keseluruhan</a>
-                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktgl">Berdasarkan Tanggal</button>
+                            <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetakkeuangan">Cetak Keuangan</button>
                         </div>
                     </div>
                 </div>
@@ -106,6 +105,7 @@
 @include('admin.pesanan.delete')
 @include('admin.pesanan.ongkir')
 @include('admin.pesanan.perludikirim')
+@include('admin.pesanan.cetakkeuangan')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

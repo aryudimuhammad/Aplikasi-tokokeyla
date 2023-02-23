@@ -276,7 +276,7 @@ Pembayaran
             <td><h4>Nama Barang</h4> </td>
             <td> <h4>:</h4> </td>
             <td> @foreach ($data2 as $d)
-                <h4>{{$d->produk->nama_barang}}, {{$d->produk->pcs}} {{$d->produk->satuan->nama_satuan}}.</h4>
+                <h4>{{$d->produk->nama_barang}} {{$d->produk->pcs}} {{$d->produk->satuan->nama_satuan}}. </h4>
             @endforeach</td>
           </tr>
           <tr>
@@ -314,9 +314,9 @@ Pembayaran
         <div class="notice"><b>Note : Apabila Barang Rusak Karena Proses Pengiriman diluar tanggung jawab kami.</b></div>
       </div>
 </div>
-<form method="get" action="{{route('nota')}}">
+<form method="get" target="_blank" action="{{route('nota')}}">
     <input type="text" value="{{$data1->notransaksi}}" hidden name="notransaksi">
-<button type="submit" class="btn btn-lg btn-primary" style="float:right;">Cetak</button>
+<button type="submit" class="btn btn-lg btn-primary"  style="float:right;">Cetak</button>
 </form>
 
         @elseif ($data->status == 4)

@@ -85,6 +85,15 @@ Route::put('/admin/agen', [App\Http\Controllers\UserController::class, 'agenedit
 Route::delete('/admin/agen/{id}', [App\Http\Controllers\UserController::class, 'agendelete'])->name('agendelete');
 
 Route::get('/admin/cetak/produk', [App\Http\Controllers\CetakController::class, 'cetakproduk'])->name('cetakproduk');
-Route::get('/admin/cetak/produk/tgl', [App\Http\Controllers\CetakController::class, 'cetakproduktgl'])->name('cetakproduktgl');
+Route::get('/admin/cetak/barangmasuk', [App\Http\Controllers\CetakController::class, 'cetakbarangmasuk'])->name('cetakbarangmasuk');
+Route::get('/admin/cetak/barangkeluar', [App\Http\Controllers\CetakController::class, 'cetakbarangkeluar'])->name('cetakbarangkeluar');
+Route::get('/admin/cetak/kategori', [App\Http\Controllers\CetakController::class, 'cetakkategori'])->name('cetakkategori');
+Route::get('/admin/cetak/satuan', [App\Http\Controllers\CetakController::class, 'cetaksatuan'])->name('cetaksatuan');
+Route::get('/admin/cetak/supplier', [App\Http\Controllers\CetakController::class, 'cetaksupplier'])->name('cetaksupplier');
+Route::get('/admin/cetak/suppliersatuan/{id}', [App\Http\Controllers\CetakController::class, 'cetaksuppliersatuan'])->name('cetaksuppliersatuan');
+Route::get('/admin/cetak/customer', [App\Http\Controllers\CetakController::class, 'cetakcustomer'])->name('cetakcustomer');
+Route::get('/admin/cetak/pesanan', [App\Http\Controllers\CetakController::class, 'cetakpesanan'])->name('cetakpesanan');
+Route::get('/admin/cetak/terlaris', [App\Http\Controllers\CetakController::class, 'cetakterlaris'])->name('cetakterlaris');
+Route::get('/admin/cetak/keuangan', [App\Http\Controllers\CetakController::class, 'cetakkeuangan'])->name('cetakkeuangan');
 });
 

@@ -27,7 +27,7 @@
             <div class="card">
               <div class="card-header">
                   <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
-                  <a href="#" class="btn btn-outline-info">Cetak</a>
+                  <a class="btn btn-outline-info" target="_blank" href="{{route('cetakcustomer')}}">Cetak Data Customer</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

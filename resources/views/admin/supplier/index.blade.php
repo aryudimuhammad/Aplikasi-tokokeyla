@@ -27,7 +27,13 @@
             <div class="card">
               <div class="card-header">
                   <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
-                  <a href="#" class="btn btn-outline-info">Cetak</a>
+                  &emsp14;
+                  <button class="btn btn-outline-info dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span><i class="feather icon-printer"></i> Cetak Data</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" target="_blank" href="{{route('cetaksupplier')}}">Cetak Keseluruhan Supplier</a>
+                        </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

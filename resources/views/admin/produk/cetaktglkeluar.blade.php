@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalcetaktgl" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
+<div class="modal fade" id="modalcetaktglkeluar" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="get" action="{{route('cetakproduktgl')}}" target="_blank">
+                <form method="get" action="{{route('cetakbarangkeluar')}}" target="_blank">
                     {{ method_field('put') }}
                     @csrf
                     <div class=" modal-body">

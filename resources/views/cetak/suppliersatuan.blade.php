@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laporan Data Barang</title>
+    <title>Laporan Data Supplier</title>
     <link rel="icon" type="image/png" href="{{url('img/logo.png')}}">
     <style>
         .logo {
@@ -91,31 +91,31 @@
     </div>
 
     <div class="container" style="margin-top:-40px;">
-        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Barang</h3>
+        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Supplier {{$data->nama_supplier}}</h3>
         <table class="table table-bordered nowrap">
-            <thead>
-                <tr>
-                    <th scope="col" class="text-center">No</th>
-                    <th scope="col" class="text-center">Nama Barang</th>
-                    <th scope="col" class="text-center">Kategori</th>
-                    <th scope="col" class="text-center">Satuan</th>
-                    <th scope="col" class="text-center">Stok</th>
-                    <th scope="col" class="text-center">Harga</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($data as $d)
-                <tr>
-                    <td scope="col" class="text-center">{{$loop->iteration}}</td>
-                    <td scope="col" class="text-center">{{$d->nama_barang }}</td>
-                    <td scope="col" class="text-center">{{$d->kategori->nama_kategori }}</td>
-                    <td scope="col" class="text-center">{{$d->pcs}} {{$d->satuan->nama_satuan }}</td>
-                    <td scope="col" class="text-center">{{$d->stok }} Qty</td>
-                    <td scope="col" class="text-center">Rp. {{number_format($d->harga, 0, ',', '.') }},-</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Produk</th>
+                <th>Kategori</th>
+                <th>Satuan</th>
+                <th>Harga</th>
+                <th>Jumlah Produk</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($produk as $d)
+            <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$d->nama_barang}}</td>
+                <td>{{$d->kategori->nama_kategori}}</td>
+                <td>{{$d->pcs}} {{$d->satuan->nama_satuan}}</td>
+                <td>{{$d->harga}}</td>
+                <td>{{$d->stok}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
         <small>Dicetak Pada : {{$now}}</small>
         <br>
         <br>

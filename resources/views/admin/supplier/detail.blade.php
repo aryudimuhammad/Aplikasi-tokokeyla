@@ -27,7 +27,8 @@
       <div class="container-fluid">
             <div class="card">
               <div class="card-header">
-                 <a style="float: right;" href="#" class="btn btn-outline-info">Cetak</a>
+                 <a style="float: left;" target="_blank" href="{{ route ('cetaksuppliersatuan',['id' => $data->id])}}" class="btn btn-outline-info">Cetak Data</a>
+                 <a style="float: right;" href="{{ route('supplierindex')}}" class="btn btn-outline-danger">Kembali</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laporan Data Barang</title>
+    <title>Laporan Data Barang Terlaris</title>
     <link rel="icon" type="image/png" href="{{url('img/logo.png')}}">
     <style>
         .logo {
@@ -61,7 +61,7 @@
         }
 
         hr {
-            margin-top: 15%;
+            margin-top: 11%;
             height: 3px;
             background-color: black;
         }
@@ -91,27 +91,29 @@
     </div>
 
     <div class="container" style="margin-top:-40px;">
-        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Barang</h3>
+        <h4 style="text-align:center;text-transform: uppercase;">Laporan Data Barang Terlaris </h4>
         <table class="table table-bordered nowrap">
             <thead>
                 <tr>
                     <th scope="col" class="text-center">No</th>
-                    <th scope="col" class="text-center">Nama Barang</th>
+                    <th scope="col" class="text-center">Notransaksi</th>
+                    <th scope="col" class="text-center">Nama Produk</th>
                     <th scope="col" class="text-center">Kategori</th>
-                    <th scope="col" class="text-center">Satuan</th>
-                    <th scope="col" class="text-center">Stok</th>
                     <th scope="col" class="text-center">Harga</th>
+                    <th scope="col" class="text-center">Jumlah Terjual</th>
+                    <th scope="col" class="text-center">Tanggal Terjual</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($data as $d)
                 <tr>
                     <td scope="col" class="text-center">{{$loop->iteration}}</td>
-                    <td scope="col" class="text-center">{{$d->nama_barang }}</td>
-                    <td scope="col" class="text-center">{{$d->kategori->nama_kategori }}</td>
-                    <td scope="col" class="text-center">{{$d->pcs}} {{$d->satuan->nama_satuan }}</td>
-                    <td scope="col" class="text-center">{{$d->stok }} Qty</td>
-                    <td scope="col" class="text-center">Rp. {{number_format($d->harga, 0, ',', '.') }},-</td>
+                    <td scope="col" class="text-center">{{$d->notransaksi}}</td>
+                    <td scope="col" class="text-center">{{$d->nama_barang}}</td>
+                    <td scope="col" class="text-center">{{$d->nama_kategori}}</td>
+                    <td scope="col" class="text-center">Rp.{{number_format($d->harga, 0, ',', '.') }},-</td>
+                    <td scope="col" class="text-center">{{$d->jumlah_produk}} Qty</td>
+                    <td scope="col" class="text-center">{{Carbon\Carbon::parse($d->updated_at)->format('d/m/Y')}}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laporan Data Barang</title>
+    <title>Laporan Data Barang Masuk</title>
     <link rel="icon" type="image/png" href="{{url('img/logo.png')}}">
     <style>
         .logo {
@@ -91,7 +91,7 @@
     </div>
 
     <div class="container" style="margin-top:-40px;">
-        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Barang</h3>
+        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Barang Masuk Dari Tanggal {{$start}} - {{$end}} </h3>
         <table class="table table-bordered nowrap">
             <thead>
                 <tr>

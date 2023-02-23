@@ -34,9 +34,7 @@
                             <span><i class="feather icon-plus"></i> Tambah Data</span>
                         </button>
                         &emsp14;
-                        <button class="btn btn-outline-info dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><i class="feather icon-printer"></i> Cetak Data</span>
-                        </button>
+                            <a class="btn btn-outline-info" target="_blank" href="{{route('cetakkategori')}}">Cetak Kategori</a>
                     </div>
                 </div>
               <!-- /.card-header -->
