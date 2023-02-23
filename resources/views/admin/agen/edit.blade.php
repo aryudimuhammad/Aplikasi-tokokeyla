@@ -13,7 +13,7 @@
                     <div class=" modal-body">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="col-form-label" for="name">Nama Agen</label>
+                            <label class="col-form-label" for="name">Nama Customer</label>
                             <input type="text" class="form-control @error ('name') is-invalid @enderror" placeholder="Masukkan Nama" name="name" value="{{old('name')}}" id="name" autofocus>
                         </div>
                         <div class="form-group">

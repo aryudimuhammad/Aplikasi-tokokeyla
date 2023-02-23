@@ -1,5 +1,5 @@
 @extends('layouts.backend.app')
-@section('title') Agen @endsection
+@section('title') Customer @endsection
 @section('head')
 <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -12,11 +12,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Agen</h1>
+            <h1>Customer</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Agen</a></li>
+              <li class="breadcrumb-item"><a href="#">Customer</a></li>
             </ol>
           </div>
         </div>
@@ -35,7 +35,7 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Nama Agen</th>
+                    <th>Nama Customer</th>
                     <th>E-Mail</th>
                     <th>Nomor Telepon</th>
                     <th>Alamat</th>
@@ -53,7 +53,6 @@
                     <td>
                     <!-- <a class="btn btn-xs btn-info text-white" href="{{route('supplierdetail',['id' => $d->id])}}">Lihat Produk</a> -->
                     <button class="btn btn-sm btn-info" data-id="{{$d->id}}" data-name="{{$d->name}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></button>
-                    <a class="btn btn-sm btn-danger" href="{{route ('supplierdelete', ['id' =>$d->id])}}"><i class="fas fa-trash"></i></a>
                     <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('agendelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                     </td>
                   </tr>

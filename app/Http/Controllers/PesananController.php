@@ -129,4 +129,126 @@ class PesananController extends Controller
         return back()->with('success', 'Checkout Berhasil Silahkan Melakukan pembayaran di Form Checkout');
     }
 
+    public function pembayaran(Request $request, $id ,$idn){
+        $kategori = Kategori::orderBy('id', 'desc')->get();
+
+        $data1 = Pesanan::where('notransaksi', $idn)->first();
+        $data2 = Pesanan_detail::where('notransaksi', $idn)->get();
+        $data2->map(function($item){
+            $harga = $item->produk->harga;
+            $jumlah = $item->jumlah_produk;
+
+            $item['harga'] = $harga * $jumlah;
+
+            return $item;
+        });
+
+
+        return view('home.pembayaran', compact('kategori','data1','data2'));
+    }
+
+    public function buktipembayaran(Request $request)
+    {
+        $date = Carbon::now()->format('Ymd');
+        $data = Pesanan::find($request->id);
+            if($request->bukti){
+        $data->bukti = $request->file('bukti')->store('post-image');
+        $data->status = 3;
+        }
+        $data->update();
+
+        $data1 = Produk::select('id','stok')->find($request->produk_id);
+        // dd($data1);
+        $data1->stok = $data1->stok - $request->jumlah;
+        $data1->update();
+        // $dataproduk = Produk::where('id' , $request->produk_id)->get();
+        // $datadetail = Pesanan_detail::where('produk_id' , $request->produk_id)->firstorfail();
+        // Produk::join('Pesanan_details', 'Pesanan_details.produk_id', '=', 'Produks.id')->update(['stok' => $dataproduk->stok - $datadetail->jumlah_produk]);
+
+
+
+        return back()->with('success', 'Data Berhasil Dikirim');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function adminpesanan()
+    {
+        $data = Pesanan::orderBy('status','asc')->get();
+
+        return view('admin.pesanan.index', compact('data'));
+    }
+
+    public function adminpesanandelete($id)
+    {
+        Pesanan::where('notransaksi', $id)->delete();
+
+        Pesanan_detail::where('notransaksi', $id)->delete();
+
+        return back()->with('success', 'Data Berhasil Dihapus');
+    }
+
+
+    public function ongkiradminpesanan(Request $request)
+    {
+        $data = Pesanan::where('id', $request->id)->first();
+        $data->ongkir = $request->ongkir;
+        $data->status = 2;
+        $data->update();
+
+        return back()->with('success', 'Ongkir Telah Ditambahkan');
+    }
+
+    public function diterima(Request $request)
+    {
+        $data = Pesanan::where('notransaksi',$request->notransaksi)->first();
+        $data->status = 5;
+        $data->update();
+
+        Pesanan_detail::where('notransaksi',$request->notransaksi)->where('status', 2)->update(['status' => 5]);
+
+        return back()->with('success','Terimasih Sudah Berbelanja Ditoko Kami.');
+    }
+
+    public function detailpesanan($id)
+    {
+        $data = Produk::where('id', $id)->first();
+
+        return view('admin.pesanan.detail', compact('data'));
+    }
+
+    public function estimasiadminpesanan(Request $request)
+    {
+        $date = Carbon::now()->format('Y-m-d');
+
+        $data = Pesanan::find($request->id);
+        $data->estimasi = $request->estimasi;
+        $data->jadwal_pengiriman = $date;
+        $data->status = 4;
+        $data->update();
+
+        return back()->with('success','Data Berhasil Disimpan.');
+    }
 }

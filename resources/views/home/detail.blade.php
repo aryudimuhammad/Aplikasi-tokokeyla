@@ -12,10 +12,11 @@
       <div class="col-12 col-sm-6">
         <h2 class="my-3">{{$data->nama_barang}}</h2>
         <h4>Kategori : {{$data->kategori->nama_kategori}}</h4>
+        <h4>Satuan : {{$data->pcs}} {{$data->satuan->nama_satuan}}</h4>
         <br>
-        <h4>Stok : {{$data->stok}}</h4>
+        <h4>Stok : {{$data->stok}} Qty</h4>
         <br><br>
-        <p>{{$data->keterangan}}</p>
+        <!-- <p>{{$data->keterangan}}</p> -->
 
         <hr>
 

@@ -42,6 +42,13 @@
           </li>
 
           <li class="nav-item menu-open">
+            <a href="{{route('adminpesanan')}}" class="nav-link">
+            <i class="fa-sharp fa-solid fa-box-archive"></i>
+              <p>Pesanan</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
             <a href="{{route('produkindex')}}" class="nav-link">
             <i class="fa-sharp fa-solid fa-box-archive"></i>
               <p>Produk</p>

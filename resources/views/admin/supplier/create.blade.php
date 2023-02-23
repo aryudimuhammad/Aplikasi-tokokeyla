@@ -11,12 +11,8 @@
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama Supplier</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan  Supplier" value="{{old('nama')}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan E-Mail" value="{{old('email')}}">
+                        <label for="nama_supplier">Nama Supplier</label>
+                        <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Masukkan  Supplier" value="{{old('nama_supplier')}}">
                     </div>
                     <div class="form-group">
                         <label for="telepon">Nomor Telepon</label>
@@ -25,10 +21,6 @@
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat" value="{{old('alamat')}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                     </div>
                 </div>
             </div>

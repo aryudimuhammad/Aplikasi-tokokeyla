@@ -23,4 +23,8 @@ class Produk extends Model
     {
         return $this->belongsTo(Pesanan_detail::class);
     }
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 }

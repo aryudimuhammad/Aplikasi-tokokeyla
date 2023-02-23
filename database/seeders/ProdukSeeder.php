@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class ProdukSeeder extends Seeder
 {
@@ -58,10 +59,21 @@ class ProdukSeeder extends Seeder
         ]);
 
 
+        $faker = Faker::create('id_ID');
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('suppliers')->insert([
+                'nama_supplier' => $faker->firstNameFemale,
+                'telepon' => $faker->phoneNumber,
+                'alamat' => $faker->streetAddress,
+            ]);
+        }
+
+
 
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Ngawiti Mas',
             'kategori_id' => '3',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '5',
             'stok' => '6',
@@ -71,6 +83,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Rojolele',
             'kategori_id' => '3',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '2.5',
             'stok' => '5',
@@ -81,6 +94,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Sania',
             'kategori_id' => '3',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '1',
             'stok' => '13',
@@ -90,6 +104,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Beras Setra Ramos Cap Topi Koki',
             'kategori_id' => '3',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '1',
             'stok' => '23',
@@ -99,6 +114,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Si Pulen Beras Pandan Wangi',
             'kategori_id' => '3',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '1',
             'stok' => '16',
@@ -108,6 +124,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Gulaku',
             'kategori_id' => '4',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '1',
             'stok' => '23',
@@ -117,6 +134,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Kecap ABC',
             'kategori_id' => '2',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '7',
             'pcs' => '700',
             'stok' => '36',
@@ -126,6 +144,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'IndoMie Goreng',
             'kategori_id' => '6',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '5',
             'pcs' => '1',
             'stok' => '7',
@@ -135,6 +154,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Minyak Goreng Bimoli',
             'kategori_id' => '5',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '3',
             'pcs' => '1',
             'stok' => '33',
@@ -144,6 +164,7 @@ class ProdukSeeder extends Seeder
         DB::table('produks')->insert([
             'nama_barang' => 'Tepung Segitiga Biru',
             'kategori_id' => '1',
+            'supplier_id' => $faker->numberBetween(1,10),
             'satuan_id' => '1',
             'pcs' => '1',
             'stok' => '25',

@@ -9,19 +9,19 @@
 @section('content')
 
 <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Supplier</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Supplier</a></li>
-            </ol>
-          </div>
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        <h1>Supplier</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Supplier</a></li>
+        </ol>
+        </div>
+    </div>
+    </div><!-- /.container-fluid -->
+</section>
 <section class="content">
       <div class="container-fluid">
             <div class="card">
@@ -36,7 +36,6 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Supplier</th>
-                    <th>E-Mail</th>
                     <th>Nomor Telepon</th>
                     <th>Alamat</th>
                     <th>Aksi</th>
@@ -46,14 +45,12 @@
                 @foreach ($data as $d)
                   <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$d->name}}</td>
-                    <td>{{$d->email}}</td>
+                    <td>{{$d->nama_supplier}}</td>
                     <td>{{$d->telepon}}</td>
                     <td>{{$d->alamat}}</td>
                     <td>
-                    <!-- <a class="btn btn-xs btn-info text-white" href="{{route('supplierdetail',['id' => $d->id])}}">Lihat Produk</a> -->
-                    <button class="btn btn-sm btn-info" data-id="{{$d->id}}" data-name="{{$d->name}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></button>
-                    <a class="btn btn-sm btn-danger" href="{{route ('supplierdelete', ['id' =>$d->id])}}"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-sm btn-warning text-white" href="{{ route ('supplierdetail' , ['id' => $d->id])}}"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-sm btn-info" data-id="{{$d->id}}" data-nama_supplier="{{$d->nama_supplier}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></button>
                     <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('supplierdelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                     </td>
                   </tr>
@@ -93,8 +90,9 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      "responsive": true,
+      "autoWidth": false,
+    });
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -111,14 +109,14 @@
     $('#editModal').on('show.bs.modal', function(event) {
         let button = $(event.relatedTarget)
         let id = button.data('id')
-        let name = button.data('name')
+        let nama_supplier = button.data('nama_supplier')
         let email = button.data('email')
         let alamat = button.data('alamat')
         let telepon = button.data('telepon')
         let modal = $(this)
 
         modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #name').val(name);
+        modal.find('.modal-body #nama_supplier').val(nama_supplier);
         modal.find('.modal-body #email').val(email);
         modal.find('.modal-body #alamat').val(alamat);
         modal.find('.modal-body #telepon').val(telepon);

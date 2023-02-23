@@ -10,15 +10,11 @@
                 <form method="post">
                     {{ method_field('put') }}
                     @csrf
-                    <div class=" modal-body">
+                    <div class="modal-body">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="col-form-label" for="name">Nama Supplier</label>
-                            <input type="text" class="form-control @error ('name') is-invalid @enderror" placeholder="Masukkan Nama" name="name" value="{{old('name')}}" id="name" autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="email">E-Mail</label>
-                            <input type="text" class="form-control @error ('email') is-invalid @enderror" placeholder="Masukkan E-Mail" name="email" value="{{old('email')}}" id="email" autofocus>
+                            <label class="col-form-label" for="nama_supplier">Nama Supplier</label>
+                            <input type="text" class="form-control @error ('nama_supplier') is-invalid @enderror" placeholder="Masukkan Nama" name="nama_supplier" value="{{old('nama_supplier')}}" id="nama_supplier" autofocus>
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="telepon">Telepon</label>

@@ -1,5 +1,5 @@
 @extends('layouts.backend.app')
-@section('title') Satuan @endsection
+@section('title') Supplier @endsection
 @section('head')
 <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -7,73 +7,73 @@
 <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 @endsection
 @section('content')
-<div class="content-header">
+
+<section class="content-header">
     <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-        <h1 class="m-0">Satuan</h1>
+        <h1>Detail Supplier {{$data->nama_supplier}}</h1>
         </div>
         <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Satuan</a></li>
+            <li class="breadcrumb-item"><a href="#">Supplier</a></li>
+            <li class="breadcrumb-item"><a href="#">Detail Supplier</a></li>
         </ol>
         </div>
     </div>
-    </div>
-</div>
-
-
+    </div><!-- /.container-fluid -->
+</section>
 <section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
+      <div class="container-fluid">
             <div class="card">
-                <div class="card-header">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-info" data-toggle="modal" data-target="#modalTambah">
-                            <span><i class="feather icon-plus"></i> Tambah Data</span>
-                        </button>
-                        &emsp14;
-                        <button class="btn btn-outline-info dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span><i class="feather icon-printer"></i> Cetak Data</span>
-                        </button>
-                    </div>
-                </div>
+              <div class="card-header">
+                 <a style="float: right;" href="#" class="btn btn-outline-info">Cetak</a>
+              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th scope="col" class="text-center">No</th>
-                    <th scope="col" class="text-center">Nama Satuan</th>
-                    <th scope="col" class="text-center">Aksi</th>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Satuan</th>
+                    <th>Harga</th>
+                    <th>Jumlah Produk</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach ($data as $d)
-                    <tr>
-                        <td scope="col" class="text-center">{{ $loop->iteration }}</td>
-                        <td scope="col" class="text-center">{{ $d->nama_satuan }}</td>
-                        <td scope="col" class="text-center">
-                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama_satuan="{{$d->nama_satuan}}" data-toggle="modal" data-target="#editModal">
-                                <i class="fa fa-pencil color-muted m-r-5"></i>
-                            </a>
-                            <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('satuandelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    @endforeach
+                @foreach ($produk as $d)
+                  <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$d->nama_barang}}</td>
+                    <td>{{$d->kategori->nama_kategori}}</td>
+                    <td>{{$d->pcs}} {{$d->satuan->nama_satuan}}</td>
+                    <td>{{$d->harga}}</td>
+                    <td>{{$d->stok}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning text-white" data-id="{{$d->id}}" data-toggle="modal" data-target="#refundModal"><i class="fa fa-pencil color-muted m-r-5"></i> Refund</button>
+                    </td>
+                  </tr>
+                @endforeach
                   </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
-            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
-    </div>
+        <!-- /.row -->
+      </div>
 </section>
-@include('admin.satuan.create')
-@include('admin.satuan.edit')
-@include('admin.satuan.delete')
+
+@include('admin.supplier.create')
+@include('admin.supplier.edit')
+@include('admin.supplier.delete')
+@include('admin.supplier.refund')
 @endsection
 @section('script')
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -112,23 +112,27 @@
     $('#editModal').on('show.bs.modal', function(event) {
         let button = $(event.relatedTarget)
         let id = button.data('id')
-        let nama_satuan = button.data('nama_satuan')
+        let nama_supplier = button.data('nama_supplier')
+        let email = button.data('email')
+        let alamat = button.data('alamat')
+        let telepon = button.data('telepon')
         let modal = $(this)
 
         modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #nama_satuan').val(nama_satuan);
+        modal.find('.modal-body #nama_supplier').val(nama_supplier);
+        modal.find('.modal-body #email').val(email);
+        modal.find('.modal-body #alamat').val(alamat);
+        modal.find('.modal-body #telepon').val(telepon);
     })
 </script>
 
 <script>
-    $('#editstok').on('show.bs.modal', function(event) {
+    $('#refundModal').on('show.bs.modal', function(event) {
         let button = $(event.relatedTarget)
         let id = button.data('id')
-        let stok = button.data('stok')
         let modal = $(this)
 
         modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #stok').val(stok);
     })
 </script>
 
@@ -139,4 +143,3 @@
     });
 </script>
 @endsection
-

@@ -11,7 +11,7 @@
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama Agen</label>
+                        <label for="name">Nama Customer</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan  Agen" value="{{old('nama')}}">
                     </div>
                     <div class="form-group">
