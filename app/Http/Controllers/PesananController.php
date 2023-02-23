@@ -126,7 +126,7 @@ class PesananController extends Controller
         Pesanan_detail::where('user_id',$id)->whereNull('status')->whereNull('notransaksi')->update(['notransaksi' => $date . $id, 'status' => 1]);
 
 
-        return back()->with('success', 'Checkout Berhasil Silahkan Melakukan pembayaran di Form Checkout');
+        return back()->with('success', 'Tunggu Verifikasi Dari Admin dan Silahkan Melakukan pembayaran di Form Checkout');
     }
 
     public function pembayaran(Request $request, $id ,$idn){

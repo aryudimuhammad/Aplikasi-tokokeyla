@@ -124,16 +124,20 @@
 <h4 class="mb-3">Metode Pembayaran</h4>
 <div class="my-3">
   <div class="form-check">
-    <input id="credit" name="paymentMethod" type="radio" value="Credit Card" class="form-check-input" checked required>
-    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="credit">Credit card</label>
+    <input id="MANDIRI" name="paymentMethod" type="radio" value="MANDIRI" class="form-check-input" checked required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="MANDIRI">MANDIRI</label>
   </div>
   <div class="form-check">
-    <input id="dana" name="paymentMethod" type="radio" value="Dana" class="form-check-input" required>
-    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="Dana">Dana</label>
+    <input id="BCA" name="paymentMethod" type="radio" value="BCA" class="form-check-input" required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="BCA">BCA</label>
   </div>
   <div class="form-check">
-    <input id="ovo" name="paymentMethod" type="radio" value="Ovo" class="form-check-input" required>
-    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="Ovo">Ovo</label>
+    <input id="BNI" name="paymentMethod" type="radio" value="BNI" class="form-check-input" required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="BNI">BNI</label>
+  </div>
+  <div class="form-check">
+    <input id="QRIS" name="paymentMethod" type="radio" value="QRIS" class="form-check-input" required>
+    <label style="padding-left: 20px; margin-top:2px;" class="form-check-label" for="QRIS">QRIS</label>
   </div>
 </div>
 </div>

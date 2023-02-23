@@ -134,6 +134,8 @@ Pembayaran
                             </div>
                         </div>
 
+
+                        @if ($data1->metode_pembayaran == 'BCA')
                         <div class="card card-tagihan shadow-sm my-3">
                             <div class="card-body">
                                 <div class="row">
@@ -141,11 +143,58 @@ Pembayaran
                                         <h4 class="text-blue-dark">Metode Pembayaran</h4> <br>
                                     </div>
                                     <div class="col-6 col-md-6">
-                                        <h4 style="margin-left: 250px;" class="text-nowrap text-secondary">{{$data1->metode_pembayaran}}</h4>
+                                        <h4 style="margin-left: 250px;" class="text-nowrap text-secondary">{{$data1->metode_pembayaran}} : 522 030 4312  , AN : AGUS CANDRA</h4>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @elseif ($data1->metode_pembayaran == 'MANDIRI')
+                        <div class="card card-tagihan shadow-sm my-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6 col-md-6">
+                                        <h4 class="text-blue-dark">Metode Pembayaran</h4> <br>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <h4 style="margin-left: 250px;" class="text-nowrap text-secondary">{{$data1->metode_pembayaran}} : 1800 004 293 561 , AN : AGUS CANDRA</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif  ($data1->metode_pembayaran == 'BNI')
+                        <div class="card card-tagihan shadow-sm my-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6 col-md-6">
+                                        <h4 class="text-blue-dark">Metode Pembayaran</h4> <br>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <h4 style="margin-left: 250px;" class="text-nowrap text-secondary">{{$data1->metode_pembayaran}} : 079 630 4321 , AN : AGUS CANDRA</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @else
+                        <div class="card card-tagihan shadow-sm my-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6 col-md-6">
+                                        <h4 class="text-blue-dark">Metode Pembayaran</h4> <br>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <!-- <h4 style="margin-left: 250px;" class="text-nowrap text-secondary">{{$data1->metode_pembayaran}}</h4> -->
+                                        <img src="{{ asset('img/Dana.jpg')}}" style="width: 500px; height:auto;" alt="dana">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
+
+
                     <form method="POST" action="" enctype="multipart/form-data">
                     @csrf
                         <div class="card card-tagihan shadow-sm my-3">
@@ -168,6 +217,8 @@ Pembayaran
                     <button class="btn btn-lg btn-primary" type="submit" style="float:right;">Lakukan Pembayaran</button>
                     </form>
                     </div>
+
+
 
 
                    <h2>Keterangan</h2>
