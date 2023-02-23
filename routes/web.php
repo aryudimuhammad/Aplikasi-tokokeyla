@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth', 'Checkrole:1,2']], function ()
 {
 
 Route::get('/profil', [App\Http\Controllers\ProdukController::class, 'profil'])->name('profil');
-Route::get('/detail', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
+Route::get('/detail/{id}', [App\Http\Controllers\ProdukController::class, 'detail'])->name('detail');
 Route::get('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
 Route::post('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cart'])->name('cart');
 Route::put('/cart/{id}', [App\Http\Controllers\PesananController::class, 'cartjumlah'])->name('cartjumlah');

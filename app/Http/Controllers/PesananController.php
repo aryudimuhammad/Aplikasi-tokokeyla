@@ -234,7 +234,12 @@ class PesananController extends Controller
 
     public function detailpesanan($id)
     {
-        $data = Produk::where('id', $id)->first();
+        $data = Pesanan::join('pesanan_details','pesanans.notransaksi', '=' , 'pesanan_details.notransaksi')
+                        ->join('produks','pesanan_details.produk_id','=','produks.id')
+                        ->join('users','pesanans.user_id','=','users.id')
+                        ->select('pesanans.status','produks.nama_barang','users.name','users.telepon','users.alamat','pesanan_details.jumlah_produk','pesanans.notransaksi','pesanans.metode_pembayaran','pesanans.jadwal_pengiriman','pesanans.estimasi')
+                        ->where('pesanan_details.notransaksi', $id)
+                        ->get();
 
         return view('admin.pesanan.detail', compact('data'));
     }

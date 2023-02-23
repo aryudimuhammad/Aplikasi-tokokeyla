@@ -61,7 +61,7 @@
         }
 
         hr {
-            margin-top: 15%;
+            margin-top: 10%;
             height: 3px;
             background-color: black;
         }
@@ -91,7 +91,7 @@
     </div>
 
     <div class="container" style="margin-top:-40px;">
-        <h4 style="text-align:center;text-transform: uppercase;">Laporan Data Barang Keluar/Terjual Dari Tanggal {{$start}} - {{$end}} </h4>
+        <h3 style="text-align:center;text-transform: uppercase;">Laporan Data Barang Keluar/Terjual Dari Tanggal {{$start}} - {{$end}} </h3>
         <table class="table table-bordered nowrap">
             <thead>
                 <tr>

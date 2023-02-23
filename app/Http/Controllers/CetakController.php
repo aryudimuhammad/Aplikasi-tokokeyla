@@ -61,7 +61,7 @@ class CetakController extends Controller
         $start = $request->start;
         $end = $request->end;
 
-         $data = Pesanan::join('pesanan_details','pesanans.notransaksi', '=' , 'pesanan_details.notransaksi')
+        $data = Pesanan::join('pesanan_details','pesanans.notransaksi', '=' , 'pesanan_details.notransaksi')
                         ->join('produks','pesanan_details.produk_id','=','produks.id')
                         ->join('users','pesanans.user_id','=','users.id')
                         ->select('pesanans.status','produks.nama_barang','users.name','users.telepon','users.alamat','pesanan_details.jumlah_produk','pesanans.notransaksi','pesanans.metode_pembayaran','pesanans.jadwal_pengiriman','pesanans.estimasi')
@@ -70,6 +70,7 @@ class CetakController extends Controller
                         ->get();
 
         $pdf = PDF::loadview('cetak.barangkeluar', compact('data', 'now', 'start', 'end'));
+        $pdf->setPaper('a4', 'landscape');
         return $pdf->stream('laporan-barang-pdf');
     }
 

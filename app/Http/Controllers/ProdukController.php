@@ -19,9 +19,9 @@ class ProdukController extends Controller
         return view('welcome', compact('produk','kategori'));
     }
 
-    public function detail()
+    public function detail($id)
     {
-        $data = Produk::orderBy('id', 'desc')->first();
+        $data = Produk::where('id', $id)->first();
 
         return view('home.detail', compact('data'));
     }

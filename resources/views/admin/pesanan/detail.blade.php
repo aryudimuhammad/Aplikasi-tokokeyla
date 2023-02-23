@@ -18,45 +18,66 @@
 <section class="content">
             <div class="card">
               <div class="card-header">
-                 <a style="float: right;" href="{{route('produkindex')}}" class="btn btn-danger btn-sm">Kembali</a>
+                 <a style="float: right;" href="{{route('adminpesanan')}}" class="btn btn-danger btn-sm">Kembali</a>
               </div>
             </div>
 </section>
 <section class="content">
-    <div class="container-fluid">
-    <div class="card">
-        <div class="row">
-        <div class="col-12 col-sm-6">
-            <h3 class="d-inline-block d-sm-none">{{$data->nama_barang}}</h3>
-            <div class="col-12">
-            <img src="{{asset('storage/' . $data->gambar)}}" class="product-image" alt="Product Image">
+      <div class="container-fluid">
+            <div class="card">
+            <div class="card-header">
+                </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+        <table class="table table-bordered nowrap">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">No</th>
+                    <th scope="col" class="text-center">Notransaksi</th>
+                    <th scope="col" class="text-center">Customer</th>
+                    <th scope="col" class="text-center">Nomor Telepon</th>
+                    <th scope="col" class="text-center">Alamat</th>
+                    <th scope="col" class="text-center">Produk</th>
+                    <th scope="col" class="text-center">Jumlah</th>
+                    <th scope="col" class="text-center">Metode Pembayaran</th>
+                    <th scope="col" class="text-center">Tanggal Pengiriman</th>
+                    <th scope="col" class="text-center">Estimasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($data as $d)
+                <tr>
+                    <td scope="col" class="text-center">{{$loop->iteration}}</td>
+                    <td scope="col" class="text-center">{{$d->notransaksi}}</td>
+                    <td scope="col" class="text-center">{{$d->name}}</td>
+                    <td scope="col" class="text-center">{{$d->telepon}}</td>
+                    <td scope="col" class="text-center">{{$d->alamat}}</td>
+                    <td scope="col" class="text-center">{{$d->nama_barang}}</td>
+                    <td scope="col" class="text-center">{{$d->jumlah_produk}} Qty</td>
+                    <td scope="col" class="text-center">{{$d->metode_pembayaran}}</td>
+                    @if ($d->jadwal_pengiriman == null)
+                        <td>-</td>
+                    @else
+                    <td scope="col" class="text-center">{{$d->jadwal_pengiriman}}</td>
+                    @endif
+
+                    @if ($d->estimasi == null)
+                    <td>-</td>
+                    @else
+                    <td scope="col" class="text-center">{{$d->estimasi}}</td>
+                    @endif
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+              </div>
+              <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
-        <div class="col-12 col-sm-6">
-            <h3 class="my-3">{{$data->nama_barang}}</h3>
-            <h5>Supllier : {{$data->supplier->nama_supplier}}</h5>
-            <h5>Kategori : {{$data->kategori->nama_kategori}}</h5>
-            <h5>Satuan : {{$data->pcs}} {{$data->satuan->nama_satuan}}</h5>
-            <h5>Stok : {{$data->stok}} Qty</h5>
-            <hr>
-
-            <!-- <p>{{$data->keterangan}}</p> -->
-
-            <div class="py-2 px-3 mt-4">
-            <h2 class="mb-0">
-            Rp. {{number_format($data->harga, 0, ',', '.') }},-
-            </h2>
-            </div>
-
-            <div class="mt-4">
-                    <input type="text" hidden name="produk_id" value="{{$data->id}}">
-                    <input type="text" hidden name="user_id" value="{{ Auth()->user()->id}}">
-            </div>
-
-        </div>
-        </div>
-  <!-- /.card-body -->
-    </div>
-    </div>
+        <!-- /.row -->
+      </div>
 </section>
 @endsection

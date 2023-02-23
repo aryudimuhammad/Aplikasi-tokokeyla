@@ -84,8 +84,8 @@
                     @endif
 
                     <td>
-                        <a href="" class="btn btn-xs btn-warning text-white"><i class="fa-solid fa-print"></i></a>
-                        <a class="btn btn-xs btn-info" href="{{ route ('adminpesanandetail' , ['id' => $d->id])}}"><i class="fa-solid fa-eye"></i></a>
+                        <!-- <a href="" class="btn btn-xs btn-warning text-white"><i class="fa-solid fa-print"></i></a> -->
+                        <a class="btn btn-xs btn-info" href="{{ route ('adminpesanandetail' , ['id' => $d->notransaksi])}}"><i class="fa-solid fa-eye"></i></a>
                         <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-xs bg-danger" data-link="{{ route('adminpesanandelete',$d->notransaksi) }}"> <i class="fa-solid fa-trash"></i></button>
                 </tr>
                 @endforeach
