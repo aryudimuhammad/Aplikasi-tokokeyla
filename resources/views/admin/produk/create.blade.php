@@ -38,6 +38,15 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label for="supplier_id">Supplier</label>
+                            <select class="custom-select" name="supplier_id" id="supplier_id">
+                                @foreach($supplier as $s)
+                                <option value="{{$s->id}}">{{ $s->nama_supplier}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <label>Stok</label>
                         <div class="form-group">
                             <input type="number" name="stok" id="stok" placeholder="Masukkan Stok"

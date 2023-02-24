@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Models\Produk;
 use App\Models\Satuan;
+use App\Models\Supplier;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -41,8 +42,9 @@ class ProdukController extends Controller
         $data = Produk::orderBy('id', 'desc')->get();
         $kategori = Kategori::orderBy('id', 'desc')->get();
         $satuan = Satuan::orderBy('id', 'desc')->get();
+        $supplier = Supplier::orderBy('id', 'desc')->get();
 
-        return view('admin.produk.index', compact('data', 'kategori', 'satuan'));
+        return view('admin.produk.index', compact('data', 'kategori', 'satuan', 'supplier'));
     }
 
     public function create(Request $request)
@@ -51,6 +53,7 @@ class ProdukController extends Controller
         $data->nama_barang = $request->nama_barang;
         $data->kategori_id = $request->kategori_id;
         $data->satuan_id = $request->satuan_id;
+        $data->supplier_id = $request->supplier_id;
         $data->stok = $request->stok;
         $data->harga = $request->harga;
         $data->gambar = $request->file('gambar')->store('post-images');

@@ -129,6 +129,7 @@
         let nama_barang = button.data('nama_barang')
         let kategori_id = button.data('kategori_id')
         let satuan_id = button.data('satuan_id')
+        let supplier_id = button.data('supplier_id')
         let stok = button.data('stok')
         let harga = button.data('harga')
         let modal = $(this)
@@ -137,6 +138,7 @@
         modal.find('.modal-body #nama_barang').val(nama_barang);
         modal.find('.modal-body #kategori_id').val(kategori_id);
         modal.find('.modal-body #satuan_id').val(satuan_id);
+        modal.find('.modal-body #supplier_id').val(supplier_id);
         modal.find('.modal-body #stok').val(stok);
         modal.find('.modal-body #harga').val(harga);
 

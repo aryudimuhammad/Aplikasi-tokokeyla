@@ -41,6 +41,15 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="supplier_id">Supplier</label>
+                            <select class="custom-select" name="supplier_id" id="supplier_id">
+                                @foreach($supplier as $s)
+                                <option value="{{$s->id}}">{{ $s->nama_supplier}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-form-label" for="stok">Stok</label>
                             <input type="text" class="form-control @error ('stok') is-invalid @enderror"
                                 placeholder="Masukkan Stok" name="stok" value="{{old('stok')}}"
