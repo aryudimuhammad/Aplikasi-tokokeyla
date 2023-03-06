@@ -39,7 +39,6 @@ class UserController extends Controller
         $data->alamat = $request->alamat;
         $data->email = $request->email;
         $data->telepon = $request->telepon;
-        $data->password = Hash::make($data['password']);
         $data->update();
 
         return back()->with('success','Data Berhasil Dibuah.');
